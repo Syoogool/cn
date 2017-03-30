@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head lang="zh">
+    <title>账单充值</title>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <!-- 清除缓存 -->
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <!-- 图标 -->
+    <link rel="icon" href="https://static.e.189.cn/e/img/logo_ico.png" type="image/png"/>
+    <link rel="shortcut icon" href="https://static.e.189.cn/e/img/logo_ico.png" type="image/png"/>
+    <link rel="bookmark" href="https://static.e.189.cn/e/img/logo_ico.png" type="image/png"/>
+    <script src="../zepto.min.js"></script>
+    <script src="../doT.min.js"></script>
+
+</head>
+<body>
+
+<script>
+    /**
+     * [getXHR description]
+     * @method getXHR
+     * @return {[type]} [description]
+     */
+    function getXHR() {
+        // xhr 10个属性  9个方法
+        var xhr = null;
+        if (window.XMLHttpRequest) {
+            xhr = new XMLHttpRequest();
+        }
+        else if (window.ActiveObject) {
+            try {
+                xhr = new ActiveXObject("Msxm12.XMLHTTP");
+            }
+            catch (e) {
+                try {
+                    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                catch (e) {
+                    alert("你的浏览器暂不支持Ajax");
+                }
+            }
+        }
+        return xhr;
+    }
+
+    // create xhr
+    console.log( getXHR() )
+
+    /**
+     * [ajax description]
+     * @method ajax
+     * @param  {[type]} url    [description]
+     * @param  {[type]} method [description]
+     * @return {[type]}        [description]
+     */
+    function ajax(url, method) {
+       var xhr = getXHR();
+       xhr.onreadystatecharge = function() {
+          console.log( 'xhr.readyState:' + this.readyState);
+          if (xhr.readyState == 4) {
+             var s = xhr.status;  // status是HTTP请求的状态
+             if ( (s >= 200 && s < 300) || s == 304 ) {
+                var resp = xhr.responseText;
+                console.log(resp);
+             }
+          }
+       }
+
+       // 触发时机  readyState == 1 状态之后， readyState == 2 状态之前
+       // 这个事件默认将传入一个ProgressEvent事件进度对象
+       xhr.onloadstart = function(p) {
+          console.log( "onloadstart");
+          console.log( 'xhr.readyState:' + this.readyState);
+          console.log("这是一个时间进度对象:" + p);
+          console.log(p);
+       }
+
+       // onprogress 事件在readyState == 3 时触发
+       xhr.onprogress = function(e) {
+          console.log( 'xhr.readyState:' + this.readyState);
+          console.log("progress:", e.loaded/e.total);
+       }
+
+       // onload事件回调方法在Ajax请求成功后触发 触发时机在 readyState == 4
+       xhr.onload = function() {
+          console.log("onload");
+          console.log( 'xhr.readyState:' + this.readyState);
+          var s = xhr.status;
+          if ( (s >= 200 && s < 300) || s == 304 ) {
+
+             var res = xhr.response;     //  response 为服务器的响应内容
+             //     responseText   响应内容的文本形式
+             //     responseXML    响应内容的xml形式
+             //     responseType   响应内容的类型   缺省为空字符串 可取"blob" "arraybuffer" "document" "json" "text"
+             //     responseURL    ajax请求的最终URL
+
+             var respt = xhr.statusText;  //  statusText为服务器状态信息 是一个UTF-16的字符串
+             console.log(res);
+             console.log(xhr.responseType);
+             console.log(xhr.responseURL);
+             console.log(xhr.getAllResponseHeaders())   // 获取搜游安全的Ajax响应
+          }
+      }
+
+       // onloadend 时间回调方法在Ajax请求完成后触发 在readyState == 4 (收到响应)
+       // 或者在  readyState == 2 （没有收到响应）触发
+       xhr.onloadend = function(e) {
+          console.log( "onloadend")
+       }
+
+       // 属性设置
+       xhr.timeout = 123;   //  设置Ajax的超时时长
+       xhr.withCredentials = false/true    // 设置为false 表示跨域请求中不发送cookies authorizationheaders 或者客户端证书等信息
+       //  方法
+       //  xhr.getAllResponseHeaders())   // 获取所有安全的Ajax响应头
+       //  xhr.getResponseHeaders(name)   // 获取响应头指定name的值
+       //  xhr.setRequestHeader()        //  设置请求头
+       xhr.ontimeout = function(e) {  //  请求超时触发
+          console.error("请求超时")
+       }
+       xhr.abort = function() {  // 用于取消ajax请求
+
+       }
+       xhr.open(method, url, true);
+       xhr.setRequestHeader("Cache-Control", 3600);
+       xhr.send();
+
+       //  请求错误处理事件
+       xhr.onerror = function(e) {
+           console.log(e)
+       };
+       console.log(xhr.upload)
+   }
+
+   var timer = setTimeout(function() {
+      console.log("setTimeout");
+   }, 0);
+   ajax('../data.json','GET');
+   console.warn("这里的log并不是最先打印出来的");
+
+</script>
+
+
+<div class="wrapper">
+   <h1>ajax test</h1>
+</div>
+
+
+</body>
+</html>
