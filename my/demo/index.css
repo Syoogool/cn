@@ -1,0 +1,299 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+	color: #666;
+}
+.header {
+	width: 100%;
+	position: fixed;
+	background-color: #000;
+	top: 0;
+	left: 0;
+	
+}
+.top {
+	width: 100%;
+	height: 30px;
+	background-color: #000;
+	
+}
+
+.top p {
+	float: right;
+	width: 200px;
+	color: #fff;
+	line-height: 30px;
+	font-size: 12px;
+
+}
+.top a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.nav-top {
+	background-color: #666;
+	/* div内元素不折行的方法*/
+	white-space:nowrap;
+    overflow: hidden;
+}
+.logo {
+	width: 150px;
+	display: inline-block;
+	line-height: 50px;
+	margin-left: 200px;
+}
+.logo img {
+	vertical-align: middle;
+
+}
+
+.nav {
+	width: 450px;
+	display: inline-block;
+	line-heihgt: 50px;
+	margin-left: 200px;
+	
+}
+
+/*-------------
+  search box
+  -----------*/
+.search-box {
+	position: relative;
+	display: inline-block;
+	margin-left:30px;
+}
+.search-input {
+	display: inline-block;
+	border-radius: 10px;
+	border:1px solid #000;
+	background-color: #000;
+	line-height: 30px;
+	/* 去除点击搜索框时候出现的边框 */
+	outline:none;
+	color: #fff;
+	padding-left: 8px;
+}
+.search-icon {
+	/* 对齐问题需要优化 icon 所在div用absolute定位解决了 */
+	position: absolute;
+	top: -4px;
+	left: 150px;
+	background: url(images/search1.svg) no-repeat center bottom;
+	width: 18px;
+	height: 30px;
+	background-size: contain;
+  border: 0;
+	cursor: pointer;
+	outline: none;	
+}
+
+/*----------
+    nav  meun
+  ----------*/  
+nav li {
+	list-style-type: none;
+	display: inline-block;
+	line-height: 50px;
+}
+.nav li a {
+	padding: 15px 15px;
+	border: 0;
+	text-decoration: none;
+	font-size: 16px;
+	color: #ccc;
+}
+.nav li a:hover {
+	color: #fff;
+}
+
+/*---------
+  content 
+  ---------*/
+#content {
+	/* position: relative;
+	这个属性导致header 消失 不能覆盖下一个div层
+	*/
+	height: 520px;
+	background-color: #1aa1ff;
+	overflow: hidden;
+}
+.img-box {
+	height: 408px;
+	width: 1000px;
+	margin-left: 200px;
+	padding-top: 50px;
+	background-size:cover;
+}
+
+
+/*------
+  tab
+  ------*/
+.tab1 {
+	position: relative;
+	height: 120px;
+	background-color: #e9eaeb;
+	/* div内元素不折行的方法*/
+	white-space:nowrap;
+  overflow: hidden;
+}
+.img-box1 {
+	display: inline-block;
+	position: relative;
+	width: 200px;
+	height: 100px;
+	margin-left: 60px;
+	/* 这个设置需要改进 */
+	vertical-align: middle;
+	padding-top: 40px;
+}
+.img-box1 a {
+	display: inline-block;
+	line-height: 40px;
+	text-decoration: none;
+	color: #666;
+}
+
+
+.img-box1 a span {
+	display: inline-block;
+	line-height: 40px;
+	vertical-align: middle;
+
+}
+.img-box1 img {
+	display: inline-block;
+	max-width: 40px;
+	vertical-align: middle;
+}
+
+.android-download {
+	display: none;
+	position: absolute;
+	top: 380px;
+	left: 300px;
+	z-index: 99;	
+}
+.ios-download {
+	display: none;
+	position: absolute;
+	top: 380px;
+	left: 550px;
+	z-index: 99;
+}
+
+.android-download img,
+.ios-download img {
+	max-width: 200px;
+	border: 4px solid #666;
+}
+
+
+.text-box {
+	width:200px;
+	
+
+}
+.text-box h5 {
+	word-wrap: break-word;	
+}
+.share-link {
+	display: inline-block;
+	min-width: 100px;
+}
+
+
+
+
+
+/* footer */
+.line {
+	height: 1px;
+	background: #000;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+
+
+
+
+/* footer */
+.footer {
+	padding: 40px 200px;
+	background-color: #e9eaeb;
+	color: #666;
+}
+.span-group {
+	padding: 30px 0;
+	/* div内元素不折行的方法*/
+	white-space:nowrap;
+    overflow: hidden;
+}
+.one {
+	font-size: 20px;
+	color: #666;
+}
+.nice {
+	display: inline-block;
+}
+.email {
+	display: inline-block; 
+    width:20px; height:20px; 
+    background: url("images/email.png") no-repeat center; 
+    
+    white-space:nowrap; 
+    letter-spacing: -1em; 
+    text-indent: -99em; 
+    color: transparent;
+    margin-left: 300px;
+    /*  微调 */
+    vertical-align: bottom;
+    background-size: contain;
+    /* IE7 */
+    *text-indent: 0;
+    *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\3000');
+}
+.tel {
+	display: inline-block; 
+    width:20px; height:20px;
+	background: url("images/tel.png") no-repeat center; 
+	margin-left: 50px;
+	white-space:nowrap; 
+    letter-spacing: -1em; 
+    text-indent: -99em; 
+    color: transparent;
+     margin-left: 50px;
+    vertical-align: bottom;
+    background-size: contain;
+}
+.email:before {
+	content: '\3000';
+}
+
+
+.two {
+	display: inline-block;
+	line-height: 20px;
+}
+.some {
+	padding-top: 30px;
+}
+
+
+
+
+h5 {
+	line-height:  200%;
+}
+.adress {
+	color: #095f8a;
+	text-decoration: none;
+}
+

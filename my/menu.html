@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="jquery-3.1.0.min.js"></script>
+<style>
+
+	#nav { 
+		width: 800px;
+		margin: 0 auto;
+        line-height: 24px;
+        list-style-type: none; 
+        background:#666; 
+    } 
+    #nav a { 
+        display: block; width: 100px; text-align:center; 
+    } 
+    #nav a:link { 
+        color:#666; text-decoration:none; 
+    } 
+    #nav a:visited { 
+        color:#666;text-decoration:none; 
+    } 
+    #nav a:hover { 
+        color:#FFF;text-decoration:none;font-weight:bold; 
+    } 
+    #nav li { 
+        float: left;  //这个算一定定位了
+        width: 100px;
+        background:#CCC; 
+    } 
+    #nav li a:hover{ 
+        background:#999; 
+    } 
+    #nav li ul { 
+        line-height: 27px; 
+        list-style-type: none;
+        text-align:left; 
+        width: 180px; 
+        position: absolute;
+        display: none;
+    } 
+    #nav li ul li{ 
+        float: left; 
+        width: 180px; 
+        background: #F6F6F6; 
+    } 
+    #nav li ul a{ 
+        display: block; 
+        width: 156px;
+        text-align:left;
+        padding-left:24px; 
+    } 
+    #nav li ul a:link { 
+        color:#666; 
+        text-decoration:none; 
+    } 
+    #nav li ul a:visited { 
+        color:#666;
+        text-decoration:none; 
+    } 
+    #nav li ul a:hover { 
+        color:#F3F3F3;
+        text-decoration:none;
+        font-weight:normal; 
+    }
+</style>
+</head>
+<body>
+    <ul id="nav"> 
+        <li><a href="http://www.phpddt.com/">首页</a> 
+            <ul> 
+                <li><a href="http://www.phpddt.com/">PHP编程</a></li> 
+                <li><a href="http://www.phpddt.com/">JAVA编程</a></li> 
+                <li><a href="http://rgb.phpddt.com/">RGB对照表</a></li> 
+                <li><a href="http://color.phpddt.com/">颜色搭配技巧</a></li> 
+            </ul> 
+        </li> 
+        <li><a href="#">栏目一</a> 
+            <ul> 
+                <li><a href="http://www.phpddt.com/">PHP编程</a></li> 
+                <li><a href="http://www.phpddt.com/">JAVA编程</a></li> 
+                <li><a href="http://rgb.phpddt.com/">RGB对照表</a></li> 
+                <li><a href="http://color.phpddt.com/">颜色搭配技巧</a></li> 
+            </ul> 
+        </li> 
+        <li><a href="http://www.phpddt.com/">首页</a> 
+            <ul> 
+                <li><a href="http://www.phpddt.com/">PHP编程</a></li> 
+                <li><a href="http://www.phpddt.com/">JAVA编程</a></li> 
+                <li><a href="http://rgb.phpddt.com/">RGB对照表</a></li> 
+                <li><a href="http://color.phpddt.com/">颜色搭配技巧</a></li> 
+            </ul> 
+        </li> 
+        <li><a href="#">栏目一</a> 
+            <ul> 
+                <li><a href="http://www.phpddt.com/">PHP编程</a></li> 
+                <li><a href="http://www.phpddt.com/">JAVA编程</a></li> 
+                <li><a href="http://rgb.phpddt.com/">RGB对照表</a></li> 
+                <li><a href="http://color.phpddt.com/">颜色搭配技巧</a></li> 
+            </ul> 
+        </li> 
+        <li><a href="http://www.phpddt.com/">首页</a> 
+            <ul> 
+                <li><a href="http://www.phpddt.com/">PHP编程</a></li> 
+                <li><a href="http://www.phpddt.com/">JAVA编程</a></li> 
+                <li><a href="http://rgb.phpddt.com/">RGB对照表</a></li> 
+                <li><a href="http://color.phpddt.com/">颜色搭配技巧</a></li> 
+            </ul> 
+        </li> 
+        <li><a href="#">栏目一</a> 
+            <ul> 
+                <li><a href="http://www.phpddt.com/">PHP编程</a></li> 
+                <li><a href="http://www.phpddt.com/">JAVA编程</a></li> 
+                <li><a href="http://rgb.phpddt.com/">RGB对照表</a></li> 
+                <li><a href="http://color.phpddt.com/">颜色搭配技巧</a></li> 
+            </ul> 
+        </li> 
+<ul>
+<script type="text/javascript">
+ $(function() {
+                $("#nav li").hover(
+                        function() {
+                            $(this).find("ul").show(100);
+                        },
+                        function() {
+                            $(this).find("ul").hide(300);
+                        }
+                );
+            });
+</script>  
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src='jquery-3.1.0.min.js'></script>
+</head>
+
+<style>
+#focus{width:500px;height:200px;overflow:hidden;/*用一个div把图片包含设置超出范围隐藏*/}
+</style>
+
+<body>
+
+<div id="focus">
+
+<img src="images/d.png" width="500" height="200">
+<img src="images/e.png" width="500" height="200">
+</div>
+<script>
+//将script写在最底部避免js阻塞页面加载
+var index=0;//当前显示的第几张图，默认开始为0；
+var mg=$("#focus img");//将焦点图储存为一个变量方便调用节省下载调用查询时间。
+var len=mg.length;//焦点图图片数量
+ 
+function showPics(n){
+mg.eq(n).fadeIn(200).siblings("img").fadeOut(200);
+//eq表示第几个标签里面的n就是代表的第几个img标签是从0开始数的。这里用siblings而不是先hide全部在fadein，siblings代表的是除开当前标签以外的所有同级标签。使用siblings来处理这样的情况速度会比你老师写的快很多倍。简单来讲siblings就是除开当前显示的这个以外的所有统计图片全部fadeOut
+}
+ 
+setInterval(function(){
+showPics(index);
+index++;
+if(index==len){//当当前播放的索引值等于总图片数就重置为0，重新开始循环
+index=0;
+}
+},2000);//将function写在setInterval里更简洁。这样写默认开始2秒就开始播放，如果想开始2秒就播放第二张，那就得把最前面的index=1;因为初始显示的就是第一张。所以2秒后应该显示第二张而不是还是第一张
+ 
+</script>
+
+</body>
+</html>
