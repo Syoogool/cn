@@ -1,0 +1,4 @@
+接口实例： http://kpeye.e.189.cn/monitor/reportList.do?date=2017-03-22&channelCode=wechatUtilities&provinceCode=CN44
+
+
+参数分别是时间 渠道 省份  后面还会加一个页码

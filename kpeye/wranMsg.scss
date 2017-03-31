@@ -1,0 +1,91 @@
+@charset "utf-8";
+@import "../comm/base.scss";
+@import "../comm/footer.scss";
+
+
+html {
+  @media only screen and (max-width: 320px) {
+    font-size: 17px;
+    height: 100%;
+  }
+  @media only screen and (min-width: 321px) {
+    font-size: 20px;
+    height: 100%;
+  }
+}
+body {
+  font: 20px/1.4 tahoma, arial, "Hiragino Sans GB", \5FAE\8F6F\96C5\9ED1, \5b8b\4f53;
+  background: #F5F5F9;
+}
+
+.wrapper {
+  overflow: hidden;
+  word-spacing: 5px;
+  letter-spacing: .1px;
+}
+
+.title {
+  display: inline-block;
+  height: 1.7rem;
+  line-height: 1.7rem;
+  margin-left: .7rem;
+  vertical-align: bottom;
+  width: 100%;
+  font-size: .6rem;
+  color: #A5A5A5;
+}
+
+.content {
+  display: flex;
+  display: -webkit-flex;
+  background: #fff;
+}
+.wrapper {
+  flex-grow: 3;
+  margin-left: .7rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+  h1 {
+    font-size: .8rem;
+    color: #FF8400;
+  }
+  div {
+    margin-bottom: .7rem;
+    font-size: .6rem;
+    color: #666;
+  }
+  p {
+    font-size: .7rem;
+    color: #666;
+    line-height: 1.6;
+    &:last-child {
+      span {
+        color: #FF8400;
+      }
+    }
+  }
+  span {
+    color: #4091EF;
+  }
+}
+.btn-detail {
+  flex-grow: 1;
+  // 垂直居中
+  display: flex;
+  display: -webkit-flex;
+  // justify-content: center;
+  align-items: center;
+  a {
+    display: inline-block;
+    width: 3rem;
+    height: 1.7rem;
+    line-height: 1.7rem;
+    vertical-align: middle;
+    text-align: center;
+    font-size: .7rem;
+    color: #A5A5A5;
+    border: 1px solid  #CCCCCC;
+    border-radius: 5px;
+  }
+}
+

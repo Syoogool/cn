@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head lang="zh">
+    <script type="text/javascript">
+        var _ux21st = (new Date()).getTime();
+        (function() {
+            var ma = document.createElement('script');
+            ma.type = 'text/javascript';
+            ma.async = true;
+            ma.src = ('https:' == document.location.protocol ? 'https://ux.21cn.com' : 'http://ux.21cn.com') + '/api/htmlReportRest/getJs.js?pid=FF30850F463C4BD2A86925DEA634ED93';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ma, s);
+        })();
+    </script>
+    <title>kpeye监控系统</title>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 清除缓存 -->
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- 图标 -->
+    <link rel="icon" href="https://static.e.189.cn/e/img/logo_ico.png" type="image/png" />
+    <link rel="shortcut icon" href="https://static.e.189.cn/e/img/logo_ico.png" type="image/png" />
+    <link rel="bookmark" href="https://static.e.189.cn/e/img/logo_ico.png" type="image/png" />
+
+    <link rel="stylesheet" href="../../../source/stylesheets/wap/kpeye/main.css">
+
+    <script>
+        var _ux21et = (new Date()).getTime();
+    </script>
+</head>
+
+<body ontouchstart="">
+    <div class="toast toast-channel">
+        <div class="notice">请选择渠道</div>
+    </div>
+    <div class="toast toast-area">
+        <div class="notice">请选择地区</div>
+    </div>
+    <div class="wrapper" id="wrapper">
+        <header class="navbar navbar-inverse">
+            <div class="container">
+                <a class="ui-button ui-button-back ui-button-left" href="/wap/uc/index.do"> </a>
+                <h1 class="title">kpeye监控查询</h1>
+                <i class="msg-no" id="j-msg"><img src="../../../source/images/wap/kpeye/msg.png" alt=""></i>
+            </div>
+        </header>
+
+        <!-- business -->
+        <div class="filter-box">
+            <div class="filter">
+                <span class="active" data-id="flow">流量</span><span data-id="charge">话费</span>
+            </div>
+        </div>
+
+        <!-- content -->
+        <div class="contents" id="scroller">
+
+            <!-- 流量 -->
+            <div class="content flow" id="flow">
+                <div class="business">
+                    <div class="item active">
+                        <span>渠道（<em class="f-channel">所有渠道</em>）</span><i class="active"></i>
+                    </div>
+                    <div class="item j-channel">
+                        <span class="f-area">所有区域</span><i></i>
+                    </div>
+                </div>
+
+                <!-- chart -->
+                <ul class="chart-box" id="flow-chart-box">
+
+                </ul>
+                <!-- <div class="loading">
+                    正在加载
+                </div> -->
+
+                <div class="select-box" id="flow-select">
+                    <ul class="nav">
+                        <li class="active">渠道</li>
+                        <li>区域</li>
+                        <li></li>
+                        <li class="complete" data-id="flow">完成</li>
+                    </ul>
+                    <div class="choose">
+                        <div class="choose-box channel-choose-box" data-id="f-channel">
+                            <div class="choose-item">
+                                <span>所有渠道</span>
+                                <span name="checkbox">
+                                    <div class="big"></div><div class="small"></div>
+                                </span>
+                            </div>
+                            <div class="choose-item">
+                                <span>渠道总量</span>
+                                <span name="checkbox">
+                                    <div class="big"></div><div class="small"></div>
+                                </span>
+                            </div>
+                            <div class="choose-item">
+                                <span>小米</span>
+                                <span name="checkbox">
+                                    <div class="big"></div><div class="small"></div>
+                                </span>
+                            </div>
+                            <div class="choose-item">
+                                <span>支付宝</span>
+                                <span name="checkbox">
+                                <div class="big"></div><div class="small"></div>
+                            </span>
+                            </div>
+                            <div class="choose-item">
+                                <span>微信</span>
+                                <span name="checkbox">
+                                    <div class="big"></div><div class="small"></div>
+                                </span>
+                            </div>
+                            <div class="choose-item">
+                                <span>财付通</span>
+                                <span name="checkbox">
+                                    <div class="big"></div><div class="small"></div>
+                                </span>
+                            </div>
+                            <div class="choose-item">
+                                <span>天猫</span>
+                                <span name="checkbox">
+                                    <div class="big"></div><div class="small"></div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="choose-box area-choose-box" data-id="f-area">
+                            <div class="choose-item">
+                                <span>所有区域</span>
+                                <span name="checkbox">
+                                    <div class="big"></div><div class="small"></div>
+                                </span>
+                            </div>
+                            <div class="choose-item">
+                                <span>全国总量</span>
+                                <span name="checkbox">
+                                    <div class="big"></div><div class="small"></div>
+                                </span>
+                            </div>
+                            <div class="choose-item">
+                                <span>广东</span>
+                                <span name="checkbox">
+                                    <div class="big"></div><div class="small"></div>
+                                </span>
+                            </div>
+                            <div class="choose-item">
+                                <span>福建</span>
+                                <span name="checkbox">
+                                    <div class="big"></div><div class="small"></div>
+                                </span>
+                            </div>
+                            <div class="choose-item">
+                                <span>湖北</span>
+                                <span name="checkbox">
+                                    <div class="big"></div><div class="small"></div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 话费 -->
+            <div class="content bill" id="charge">
+                <div class="business">
+                    <div class="item">
+                        <span>渠道（<em class="c-channel">所有渠道</em>）</span><i class="active"></i>
+                    </div>
+                    <div class="item">
+                        <span class="c-area">所有区域</span><i></i>
+                    </div>
+                </div>
+
+                <!-- chart -->
+                <ul class="chart-box" id="charge-chart-box">
+                    <!-- <div class="panel">
+                    <h1>支付宝</h1>
+                </div>
+                <div class="data-content" >
+                    <div class="area">
+                        <span>广东</span>
+                    </div>
+                    <ul class="data">
+                        <li class="sub-data">
+                            <p>今日订单</p>
+                            <p>同比昨日</p>
+                        </li>
+                        <li class="sub-data">
+                            <p class="count">12614个</p>
+                            <p class="count-rate">-7.8%</p>
+                        </li>
+                        <li class="sub-data">
+                            <p class="money">143650元</p>
+                            <p class="money-rate">+114.6%</p>
+                        </li>
+                    </ul>
+                </div> -->
+            </ul>
+                <!-- <div class="loading">
+                    正在加载
+                </div> -->
+
+                <div class="select-box" id="charge-select">
+                    <ul class="nav">
+                        <li class="active">渠道</li>
+                        <li>区域</li>
+                        <li></li>
+                        <!-- data-id="charge" 作为选择业务标识数据 -->
+                        <li class="complete" data-id="charge">完成</li>
+                    </ul>
+                    <div class="choose">
+                        <div class="choose-box channel-choose-box" data-id="c-channel">
+                            <div class="choose-item">
+                                <span>所有渠道</span>
+                                <span name="checkbox">
+                                <div class="big"></div><div class="small"></div>
+                            </span>
+                            </div>
+                            <div class="choose-item">
+                                <span>渠道总量</span>
+                                <span name="checkbox">
+                                <div class="big"></div><div class="small"></div>
+                            </span>
+                            </div>
+                            <div class="choose-item">
+                                <span>支付宝</span>
+                                <span name="checkbox">
+                                <div class="big"></div><div class="small"></div>
+                            </span>
+                            </div>
+                            <div class="choose-item">
+                                <span>微信</span>
+                                <span name="checkbox">
+                                <div class="big"></div><div class="small"></div>
+                            </span>
+                            </div>
+                        </div>
+                        <div class="choose-box area-choose-box" data-id="c-area">
+                            <div class="choose-item">
+                                <span>所有区域</span>
+                                <span name="checkbox">
+                                    <div class="big"></div><div class="small"></div>
+                                </span>
+                            </div>
+                            <div class="choose-item">
+                                <span>全国总量</span>
+                                <span name="checkbox">
+                                    <div class="big"></div><div class="small"></div>
+                                </span>
+                            </div>
+                            <div class="choose-item">
+                                <span>广东</span>
+                                <span name="checkbox">
+                                    <div class="big"></div><div class="small"></div>
+                                </span>
+                            </div>
+                            <div class="choose-item">
+                                <span>湖北</span>
+                                <span name="checkbox">
+                                    <div class="big"></div><div class="small"></div>
+                                </span>
+                            </div>
+                            <div class="choose-item">
+                                <span>河南</span>
+                                <span name="checkbox">
+                                    <div class="big"></div><div class="small"></div>
+                                </span>
+                            </div>
+                            <div class="choose-item">
+                                <span>广西</span>
+                                <span name="checkbox">
+                                    <div class="big"></div><div class="small"></div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+
+        <div class="footer">
+            <p>copyright@中国电信</p>
+        </div>
+    </div>
+
+
+    <script src="../../../source/js/libs/zepto/zepto.min.js"></script>
+    <script src="../../../source/js/plus/speye/echarts.common.min.js"></script>
+    <script src="../../../source/js/plus/speye/iscroll.js"></script>
+    <script src="../../../source/js/plus/speye/index.js"></script>
+
+</body>
+
+</html>
