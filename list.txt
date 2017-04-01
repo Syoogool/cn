@@ -1,0 +1,10 @@
+环境搭建   compass/sass   ruby
+           npm/ node  nrm anywhere
+
+工具    sublime 插件
+        chrome  插件  postman adminhost
+        webstorm
+        cmder
+        gulp
+        git
+        lantern  
